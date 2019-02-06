@@ -17,13 +17,13 @@ static PyObject* exmod_say_hello(PyObject* self, PyObject *args)
   }
   else
   {
-    prinf("Message: %s",msg);
+    printf("Message: %s",msg);
     sts=21;
   }
   return Py_BuildValue("i",sts);
 }
 static PyMethodDef exmod_methods[] = {
-  {"hello", exmod_say_hello, METHVARARGS, "Say hello"};
+  {"say_hello", exmod_say_hello, METH_VARARGS, "Say hello"},
   {NULL,NULL,0,NULL}
 };
 PyMODINIT_FUNC initexmod(void)
@@ -33,5 +33,5 @@ PyMODINIT_FUNC initexmod(void)
   if(m== NULL)  return;
   exmodError=PyErr_NewException("exmod error",NULL,NULL);
   Py_INCREF(exmodError);
-  PyModule_AddObject(m,"error",exmodError");
+  PyModule_AddObject(m,"error",exmodError);
 }
