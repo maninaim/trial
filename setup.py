@@ -10,6 +10,3 @@ setup(name='exmod',
       author='soliduscode',
       url='http://www.soliduscode.com',
       ext_modules=[module1])
-
-
-}
